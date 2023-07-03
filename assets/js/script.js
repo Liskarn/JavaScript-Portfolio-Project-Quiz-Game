@@ -149,3 +149,38 @@ function selectAnswer(e) {
   
     nextButton.style.display = "block";
 }
+
+
+// Function to end the game
+function endGame() {
+    clearInterval(timer);
+    questionElement.innerText = `Quiz Completed! Your Score: ${score}/${questions.length}`;
+    nextButton.style.display = "none";
+  
+    // Remove answer buttons
+    while (answerButtons.firstChild) {
+      answerButtons.removeChild(answerButtons.firstChild);
+    }
+  
+    // Create "Quit Game" button
+    const quitButton = document.createElement("button");
+    quitButton.innerText = "Quit Game";
+    quitButton.classList.add("btn");
+    quitButton.addEventListener("click", () => {
+      // Redirect to index.html
+      window.location.href = "index.html";
+    });
+  
+    // Create "Play Again" button
+    const playAgainButton = document.createElement("button");
+    playAgainButton.innerText = "Play Again";
+    playAgainButton.classList.add("btn");
+    playAgainButton.addEventListener("click", () => {
+      // Restart the game
+      restartGame();
+    });
+  
+    // Append the buttons to the answer buttons container
+    answerButtons.appendChild(quitButton);
+    answerButtons.appendChild(playAgainButton);
+}
