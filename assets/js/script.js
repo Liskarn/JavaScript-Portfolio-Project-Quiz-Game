@@ -229,4 +229,15 @@ function startTimer() {
         endGame();
       }
     }, 1000);
-  }
+}
+
+
+// Event listener for the next button
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      displayRandomQuestion();
+    } else {
+      endGame();
+    }
+});
