@@ -102,3 +102,12 @@ const questions = [
     ],
   },
 ];
+
+
+// Function to start the game
+function startGame() {
+    score = 0;
+    usedQuestionIndices = [];
+    displayRandomQuestion();
+    startTimer();
+  }
