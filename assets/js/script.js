@@ -148,4 +148,4 @@ function selectAnswer(e) {
     });
   
     nextButton.style.display = "block";
-  }
+}
