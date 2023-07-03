@@ -243,3 +243,18 @@ nextButton.addEventListener("click", () => {
 });
 
 
+// Function to restart the game
+function restartGame() {
+    score = 0;
+    usedQuestionIndices = [];
+  
+    // Clear any error message
+    const errorMessage = answerButtons.querySelector("p");
+    if (errorMessage) {
+      answerButtons.removeChild(errorMessage);
+    }
+  
+    resetState();
+    displayRandomQuestion();
+    startTimer();
+}
