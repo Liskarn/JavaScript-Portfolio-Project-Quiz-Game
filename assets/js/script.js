@@ -103,7 +103,6 @@ const questions = [
   },
 ];
 
-
 // Array to store the used question indices
 let usedQuestionIndices = [];
 
@@ -132,129 +131,132 @@ function displayRandomQuestion() {
   });
 }
 
-
 // Function to start the game
 function startGame() {
-    score = 0;
-    usedQuestionIndices = [];
-    displayRandomQuestion();
-    startTimer();
+  score = 0;
+  usedQuestionIndices = [];
+  displayRandomQuestion();
+  startTimer();
 }
-
 
 // Function to create an answer button
 function createAnswerButton(answer) {
-    const button = document.createElement("button");
-    button.innerText = answer.text;
-    button.classList.add("btn");
-  
-    if (answer.correct) {
-      button.dataset.correct = answer.correct;
-    }
-  
-    button.addEventListener("click", selectAnswer);
-    return button;
+  const button = document.createElement("button");
+  button.innerText = answer.text;
+  button.classList.add("btn");
+
+  if (answer.correct) {
+    button.dataset.correct = answer.correct;
+  }
+
+  button.addEventListener("click", selectAnswer);
+  return button;
 }
 
+// Function to reset the state
+function resetState() {
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
+}
 
 // Function to handle the selection of an answer
 function selectAnswer(e) {
-    const selectedButton = e.target;
-    const isCorrect = selectedButton.dataset.correct === "true";
-  
-    if (isCorrect) {
-      selectedButton.classList.add("correct");
-      score++;
-    } else {
-      selectedButton.classList.add("incorrect");
-    }
-  
-    Array.from(answerButtons.children).forEach((button) => {
-      if (button.dataset.correct === "true") {
-        button.classList.add("correct");
-      }
-      button.disabled = true;
-    });
-  
-    nextButton.style.display = "block";
-}
+  const selectedButton = e.target;
+  const isCorrect = selectedButton.dataset.correct === "true";
 
+  if (isCorrect) {
+    selectedButton.classList.add("correct");
+    score++;
+  } else {
+    selectedButton.classList.add("incorrect");
+  }
+
+  Array.from(answerButtons.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+
+  nextButton.style.display = "block";
+}
 
 // Function to end the game
 function endGame() {
-    clearInterval(timer);
-    questionElement.innerText = `Quiz Completed! Your Score: ${score}/${questions.length}`;
-    nextButton.style.display = "none";
-  
-    // Remove answer buttons
-    while (answerButtons.firstChild) {
-      answerButtons.removeChild(answerButtons.firstChild);
-    }
-  
-    // Create "Quit Game" button
-    const quitButton = document.createElement("button");
-    quitButton.innerText = "Quit Game";
-    quitButton.classList.add("btn");
-    quitButton.addEventListener("click", () => {
-      // Redirect to index.html
-      window.location.href = "index.html";
-    });
-  
-    // Create "Play Again" button
-    const playAgainButton = document.createElement("button");
-    playAgainButton.innerText = "Play Again";
-    playAgainButton.classList.add("btn");
-    playAgainButton.addEventListener("click", () => {
-      // Restart the game
-      restartGame();
-    });
-  
-    // Append the buttons to the answer buttons container
-    answerButtons.appendChild(quitButton);
-    answerButtons.appendChild(playAgainButton);
-}
+  clearInterval(timer);
+  questionElement.innerText = `Quiz Completed! Your Score: ${score}/${questions.length}`;
+  nextButton.style.display = "none";
 
+  // Remove answer buttons
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
+
+  // Create "Quit Game" button
+  const quitButton = document.createElement("button");
+  quitButton.innerText = "Quit Game";
+  quitButton.classList.add("btn");
+  quitButton.addEventListener("click", () => {
+    // Redirect to index.html
+    window.location.href = "index.html";
+  });
+
+  // Create "Play Again" button
+  const playAgainButton = document.createElement("button");
+  playAgainButton.innerText = "Play Again";
+  playAgainButton.classList.add("btn");
+  playAgainButton.addEventListener("click", () => {
+    // Restart the game
+    restartGame();
+  });
+
+  // Append the buttons to the answer buttons container
+  answerButtons.appendChild(quitButton);
+  answerButtons.appendChild(playAgainButton);
+}
 
 // Function to start the timer
 function startTimer() {
-    let timeLeft = 60;
-    timerElement.innerText = `Time Left: ${timeLeft}s`;
-  
-    timer = setInterval(() => {
-      timeLeft--;
-      timerElement.innerText = `Time Left: ${timeLeft}s`;
-  
-      if (timeLeft === 0) {
-        clearInterval(timer);
-        endGame();
-      }
-    }, 1000);
-}
+  let timeLeft = 60;
+  timerElement.innerText = `Time Left: ${timeLeft}s`;
 
+  timer = setInterval(() => {
+    timeLeft--;
+    timerElement.innerText = `Time Left: ${timeLeft}s`;
+
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      endGame();
+    }
+  }, 1000);
+}
 
 // Event listener for the next button
 nextButton.addEventListener("click", () => {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      displayRandomQuestion();
-    } else {
-      endGame();
-    }
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    displayRandomQuestion();
+  } else {
+    endGame();
+  }
 });
-
 
 // Function to restart the game
 function restartGame() {
-    score = 0;
-    usedQuestionIndices = [];
-  
-    // Clear any error message
-    const errorMessage = answerButtons.querySelector("p");
-    if (errorMessage) {
-      answerButtons.removeChild(errorMessage);
-    }
-  
-    resetState();
-    displayRandomQuestion();
-    startTimer();
+  score = 0;
+  usedQuestionIndices = [];
+
+  // Clear any error message
+  const errorMessage = answerButtons.querySelector("p");
+  if (errorMessage) {
+    answerButtons.removeChild(errorMessage);
+  }
+
+  resetState();
+  displayRandomQuestion();
+  startTimer();
 }
+
+// Start the game
+startGame();
