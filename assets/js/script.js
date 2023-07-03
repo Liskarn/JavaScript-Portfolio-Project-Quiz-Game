@@ -213,3 +213,20 @@ function endGame() {
     answerButtons.appendChild(quitButton);
     answerButtons.appendChild(playAgainButton);
 }
+
+
+// Function to start the timer
+function startTimer() {
+    let timeLeft = 60;
+    timerElement.innerText = `Time Left: ${timeLeft}s`;
+  
+    timer = setInterval(() => {
+      timeLeft--;
+      timerElement.innerText = `Time Left: ${timeLeft}s`;
+  
+      if (timeLeft === 0) {
+        clearInterval(timer);
+        endGame();
+      }
+    }, 1000);
+  }
