@@ -104,6 +104,35 @@ const questions = [
 ];
 
 
+// Array to store the used question indices
+let usedQuestionIndices = [];
+
+// Function to display a random question
+function displayRandomQuestion() {
+  resetState();
+
+  if (usedQuestionIndices.length === questions.length) {
+    endGame();
+    return;
+  }
+
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * questions.length);
+  } while (usedQuestionIndices.includes(randomIndex));
+
+  const question = questions[randomIndex];
+  usedQuestionIndices.push(randomIndex);
+
+  questionElement.innerText = question.question;
+
+  question.answers.forEach((answer) => {
+    const button = createAnswerButton(answer);
+    answerButtons.appendChild(button);
+  });
+}
+
+
 // Function to start the game
 function startGame() {
     score = 0;
