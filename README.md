@@ -1,68 +1,52 @@
-# Quiz-Game.
 
-A small game made with simple html,css and javascript that anyone can use. The game is made up of two HTML pages one for the start page and one for the game. Some simple CSS nothing super fancy to give it a little bit of a more apealing design. Simple javascript. that takes the question from the already created array with questions and displays them correctly, And some nice user feedback with buttons getting diabled and disapearing when no availible. Aswell as changin color on hover and if the answer is correct or wrong. At the moment the game only has 4 questions related to movies but hopefully i will have time in the future to add more.
+# Quiz Game
+This quiz game is a simple, yet engaging web-based game created with HTML, CSS, and JavaScript. It consists of two HTML pages: the start page and the game page. The design, though straightforward, is appealing, thanks to some basic CSS styling.
 
-![Am i responsive picture.](assets/images/am-i-respnsive-quizgame.png)
+The game logic is handled by JavaScript, which pulls questions from a pre-set array and displays them to the user. The user interface offers real-time feedback, with buttons that change color based on the correctness of the user's answer and become disabled when they are not available.
 
-# Existing features.
+At present, the game contains ten randomized movie-related questions, but there are plans to expand the question set in the future.
+
+![Am I Responsive?](/assets/images/am_i_responsive1.png)
+
+## Quiz Game Overview
+
+### Features
+- Start Screen
+- The "Play" button launches the game and redirects the user to the game page.
+
+![Play Button](/assets/images/start.png)
+
+### Header
+- The header doubles as a home button, allowing users to return to the start page.
 
 
-## Play Button.
-- Used to start the game and take you to the HTML Game page.
+### Game Area
+-The game area displays the questions and answer choices. It also demonstrates how JavaScript applies and removes classes from the buttons for a more immersive user experience.
 
-![The start game page](assets/images/playbutton-quizgame.png)
+![Game Area](/assets/images/questions.png)
+### Responsive Buttons
+![Buttons](/assets/images/buttons.png)
+### Score Area
+- After all the questions have been answered, the score area displays the user's total score. A button then appears asking the user if they want to play again.
 
-## Header.
-- The header also used ass a homepage button 
+![Score Area](/assets/images/score.png)
 
-![Header and homepage button](assets/images/header-quizgame.png)
+## Testing
+### Validator Testing
+- HTML: No errors were found when passing through the [W3C Validator.](https://validator.w3.org/nu/#textarea)
+- CSS: No errors were found when passing through the [Jigsaw Validator.](https://jigsaw.w3.org/css-validator/validator)
+- JavaScript: No errors, [Jshint validator.](https://jshint.com/)
 
+## Deployment
+### The site has been deployed to GitHub pages. The steps to deploy are as follows:
 
-## Game area.
-- This section is how the game looks 
-- Also displays how the javascript applies and removes classes from the buttons to make i more emersive.
+- In the GitHub repository, navigate to the Settings tab.
+- From the source section drop-down menu, select the Master Branch.
+- Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+- The live link to the game can be found [here.](https://liskarn.github.io/JavaScript-Portfolio-Project-Quiz-Game/)
 
-![Game are and responsive buttons](assets/images/gamearea-quizgame.png)
-
-![Responsive buttons](assets/images/right-and-wrong-quizgame.png)
-
-## Score area.
-- After the game is done and you have anwsered all the questions the score is displayed.
-- And a new button apears that asks if you want to play again.
-
-![Score Area](assets/images/scorepage-quizgame.png)
-
-# Testing.
-
-## Validator testing.
-- HTML
-    - No errors in the [W3C vaidator.](https://validator.w3.org/nu/#textarea) 
-
-- CSS
-    - No errors in the [Jigsaw validator.](https://jigsaw.w3.org/css-validator/validator)
-
-- JavaScript
-    - No errors only warnings for not using semicolons, [Jshint validator.](https://jshint.com/)
-        - There are 9 functions in this file.
-
-        - Function with the largest signature take 1 arguments, while the median is 0.
-
-        - Largest function has 8 statements in it, while the median is 4.
-
-        - The most complex function has a cyclomatic complexity value of 2 while the median is 2.
-
-## Unfixed bugs.
- - No unfixed bugs that i can find in eather git hub or or Jshint validator.
-
- # Deployment.
-- The site was deployed to GitHub pages. The steps to deploy are as follows:
-    - In the GitHub repository, navigate to the Settings tab
-    - From the source section drop-down menu, select the Master Branch
-    - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-
-The live link can be found here: https://liskarn.github.io/Quiz-game/index.html
-
-# Credits.
-- Content 
-    - The icons for the header is taken from: https://fontawesome.com/search?q=movie&o=r&m=free
-    - The font style is taken from: https://fonts.google.com/
+## Credits
+- The icons used in the header were sourced from Font Awesome.
+- The font style was obtained from Google Fonts.
+- The javascript and advanced javascript lesson in the code institute course
+- Some inspiration for layout and style from the youtube tutorial that is free to use https://www.youtube.com/watch?v=PBcqGxrr9g8&t=4s

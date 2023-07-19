@@ -1,7 +1,6 @@
-/* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap');
 
-/* General styles for the pages */
+/* General styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,26 +15,14 @@ body {
     min-height: 100vh;
 }
 
-
-
-/* Footer styles */
-footer {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: auto;
-    background-color: #222; /* Change the background color for more contrast */
-    padding: 20px;
-    color: #fff;
-}
-
-/* Heading styles */
+/* Header styles */
 .heading {
     text-align: center;
     padding-top: 150px;
     font-size: 50px;
 }
 
-/* Application container styles */
+/* Main application container styles */
 .application {
     background: #fff;
     width: 80%;
@@ -54,25 +41,12 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #222;
-    color: #fff; 
-    margin-bottom: 10px;
-  }
-
-/* Question styles */
 .game h2 {
     font-size: 24px;
     color: #000;
 }
 
-/* Answer button styles */
+/* Button styles */
 .btn {
     background: #fff;
     color: #222;
@@ -97,60 +71,20 @@ footer {
     cursor: no-drop;
 }
 
-/* Next button styles */
-#next-btn {
-    background: #141418;
-    color: #fff;
-    font-size: 24px;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px auto 0;
-    border-radius: 4px;
-    cursor: pointer;
-    display: none;
-    font-weight: 600;
-}
-
-/* Container section styles */
-.container {
-    text-align: center;
-    margin-top: 200px;
-}
-
-/* Play button styles */
-#play-btn {
-    background-color: #fff;
-    color: #141418;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 24px;
-    width: 80px;
-    height: 35px;
-    margin: auto;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-#play-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Correct answer styles */
-.correct {
+.btn.correct {
     background-color: rgba(23, 100, 16, 0.959);
 }
 
-/* Incorrect answer styles */
-.incorrect {
+.btn.incorrect {
     background-color: rgba(247, 9, 9, 0.479);
 }
 
-/* Meassages */
-
-#error-message {
-    color: #f44336;
-    margin-bottom: 10px;
-  }
+/* Footer styles */
+footer {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: auto;
+    background-color: #222;
+    padding: 20px;
+    color: #fff;
+}
